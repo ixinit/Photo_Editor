@@ -9,15 +9,14 @@ import android.os.Environment
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.photoeditor.app.filter.FilterListener
 import com.photoeditor.app.filter.FilterViewAdapter
+import com.photoeditor.app.weather.WeatherApi
 import ja.burhanrashid52.photoeditor.PhotoEditor
 import ja.burhanrashid52.photoeditor.PhotoEditorView
 import ja.burhanrashid52.photoeditor.PhotoFilter
@@ -37,6 +36,7 @@ class MainActivity2 : AppCompatActivity(), FilterListener {
     private var cameraImageView : ImageView? = null
     private var galleryImageView : ImageView? = null
     private var saveImageView : ImageView?=null
+    private lateinit var but : ImageView
 
     private val mFilterViewAdapter = FilterViewAdapter(this)
     private val llmFilters = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -139,7 +139,13 @@ class MainActivity2 : AppCompatActivity(), FilterListener {
                         }
                     })
             }
-
+        }
+        but = findViewById(R.id.addWeather)
+        but.setOnClickListener{
+            //getWeather(it)
+            WeatherApi(this).getWeather(mPhotoEditor)
+            showToast("yf;fnj")
+            //Toast.makeText(this,"нажато",Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -164,6 +170,10 @@ class MainActivity2 : AppCompatActivity(), FilterListener {
         if(!dir.exists()) dir.mkdir()
     }
 
+    private fun getWeather(){
+        WeatherApi(this).getWeather(mPhotoEditor)
+        //textView.text = WeatherApi(this).getWeather()
+    }
     private fun saveFile(){
         //
     }

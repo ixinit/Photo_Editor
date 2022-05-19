@@ -13,9 +13,11 @@ import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.FileProvider
 import com.ortiz.touchview.TouchImageView
+import com.photoeditor.app.weather.WeatherApi
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -27,12 +29,14 @@ class MainActivity : AppCompatActivity() {
     val REQUEST_IMAGE_CAPTURE = 1
     private lateinit var imageView: TouchImageView
     lateinit var currentPhotoPath: String
+    lateinit var textView:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         imageView = findViewById(R.id.tivPhoto)
         val button: Button = findViewById(R.id.btnCreatePhoto)
+        textView = findViewById(R.id.textView)
         button.setOnClickListener {
             dispatchTakePictureIntent()
             
@@ -94,6 +98,10 @@ class MainActivity : AppCompatActivity() {
     fun photoedit(view:View){
         val camIntent = Intent(this, MainActivity2::class.java)
         startActivity(camIntent)
+    }
+
+    fun getWeather(view:View){
+        //textView.text = WeatherApi(this).getWeather()
     }
 
     private fun dispatchTakePictureIntent() {
