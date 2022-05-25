@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/drawable/ic_baseline_cloud_24.xml" value="0.2665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.2665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/drawable/krugugol.xml" value="0.2665" />
         <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/drawable/sample_image.xml" value="0.2705" />
         <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/layout/activity_main2.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/layout/filters_row.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/layout/krugugl.xml" value="0.26145833333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2655" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/mipmap-anydpi-v26/ic_launcher1.xml" value="0.2665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.207" />
         <entry key="..\:/Users/user/AndroidStudioProjects/PhotoEditor/app/src/main/res/xml/file_paths.xml" value="0.19947916666666668" />
       </map>
     </option>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".PhotoEditorMain">
 
     <ja.burhanrashid52.photoeditor.PhotoEditorView
         android:id="@+id/photoEditorView"
@@ -15,7 +15,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
     </ja.burhanrashid52.photoeditor.PhotoEditorView>
 
@@ -23,6 +23,7 @@
         android:id="@+id/recyclerViewFilters"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        android:background="@color/primaryColor"
         android:orientation="horizontal"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
@@ -37,37 +38,38 @@
 
     <ImageView
         android:id="@+id/cameraImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/photoEditorView"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
 
     <ImageView
         android:id="@+id/galleryImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/photoEditorView"
         app:layout_constraintStart_toEndOf="@+id/cameraImageView"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:srcCompat="@drawable/ic_baseline_image_24" />
 
     <ImageView
         android:id="@+id/saveImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/photoEditorView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_save" />
+        app:srcCompat="@drawable/ic_baseline_save_24" />
 
     <ImageView
         android:id="@+id/addWeather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/photoEditorView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_cloud_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

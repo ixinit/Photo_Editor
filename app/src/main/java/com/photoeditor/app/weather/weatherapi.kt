@@ -13,7 +13,6 @@ import org.json.JSONException
 class WeatherApi {
 
     private val context:Context
-    var Result = 0
 
     lateinit var weather_description:String
     lateinit var city:String
@@ -38,8 +37,7 @@ class WeatherApi {
                     weather_description = response.getJSONArray("weather").getJSONObject(0).getString("description")
                     city = response.getString("name")
                     temp = response.getJSONObject("main").getString("temp")
-                    //Result=1
-                    mPhotoEditor?.addText("${weather_description}\n${city}\nТемпература: ${temp}",Color.BLACK);
+                    mPhotoEditor?.addText("${city}\n${temp} °C ${weather_description}",Color.BLACK);
                 }catch (e:JSONException){
                     e.printStackTrace()
                     mPhotoEditor?.addText("Не удалось получть данные о погоде",Color.BLACK);
@@ -47,6 +45,7 @@ class WeatherApi {
             },
             { error ->
                 error.printStackTrace()
+                mPhotoEditor?.addText("Не удалось получть данные о погоде",Color.BLACK);
             }
         )
         // Add the request to the RequestQueue.
