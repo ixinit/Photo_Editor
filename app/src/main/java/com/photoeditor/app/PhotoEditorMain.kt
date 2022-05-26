@@ -6,7 +6,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.widget.ImageView
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -33,10 +33,10 @@ class PhotoEditorMain : AppCompatActivity(), FilterListener {
 
     private var mPhotoEditor: PhotoEditor? = null
     private var recyclerView: RecyclerView? = null
-    private var cameraImageView: ImageView? = null
-    private var galleryImageView: ImageView? = null
-    private var saveImageView: ImageView? = null
-    private lateinit var but: ImageView
+    private var cameraImageButton: ImageButton? = null
+    private var galleryImageButton: ImageButton? = null
+    private var saveImageButton: ImageButton? = null
+    private lateinit var addWeatherButton: ImageButton
 
     private val mFilterViewAdapter = FilterViewAdapter(this)
     private val llmFilters = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -80,8 +80,8 @@ class PhotoEditorMain : AppCompatActivity(), FilterListener {
         recyclerView?.layoutManager = llmFilters
         recyclerView?.adapter = mFilterViewAdapter
 
-        cameraImageView = findViewById(R.id.cameraImageView)
-        cameraImageView?.setOnClickListener {
+        cameraImageButton = findViewById(R.id.cameraImageButton)
+        cameraImageButton?.setOnClickListener {
             val photoFile = File.createTempFile(
                 "IMG_",
                 ".jpg",
@@ -97,13 +97,13 @@ class PhotoEditorMain : AppCompatActivity(), FilterListener {
             getPicture.launch(uri)
         }
 
-        galleryImageView = findViewById(R.id.galleryImageView)
-        galleryImageView?.setOnClickListener {
+        galleryImageButton = findViewById(R.id.galleryImageButton)
+        galleryImageButton?.setOnClickListener {
             getContent.launch("image/*")
         }
 
-        saveImageView = findViewById(R.id.saveImageView)
-        saveImageView?.setOnClickListener {
+        saveImageButton = findViewById(R.id.saveImageButton)
+        saveImageButton?.setOnClickListener {
             if (ActivityCompat.checkSelfPermission(
                     this,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -135,8 +135,8 @@ class PhotoEditorMain : AppCompatActivity(), FilterListener {
                 })
 
         }
-        but = findViewById(R.id.addWeather)
-        but.setOnClickListener {
+        addWeatherButton = findViewById(R.id.addWeatherImageButton)
+        addWeatherButton.setOnClickListener {
             WeatherApi(this).getWeather(mPhotoEditor)
         }
     }

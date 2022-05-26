@@ -25,5 +25,10 @@
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
         <item name="colorOnSecondary">@color/secondaryLightColor</item>
+
+        <item name="imageButtonStyle">@style/imagebutton</item>
+    </style>
+    <style name="imagebutton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:backgroundTint">@color/primaryColor</item>
     </style>
 </resources>
